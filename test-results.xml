@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="0.807" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-05-13T23:06:02" tests="0" file="cypress/integration/cep.spec.js" failures="0" time="0">
+  </testsuite>
+  <testsuite name="CEP" timestamp="2020-05-13T23:06:02" tests="1" failures="0" time="0.807">
+    <testcase name="CEP should return cep" time="0.807" classname="should return cep">
+    </testcase>
+  </testsuite>
+</testsuites>
