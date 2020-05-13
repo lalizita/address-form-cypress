@@ -4,8 +4,10 @@ jobs:
   cypress-run:
     runs-on: ubuntu-16.04
     steps:
-        env:
+      with: # Configura o segredo como uma entrada
         CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
+        env:
+          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
       - name: Checkout
         uses: actions/checkout@v1
       - name: Cypress run
