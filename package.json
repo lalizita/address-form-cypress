@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "cy:run": "cypress run --headed -p=3000,
+    "cy:run": "cypress run --headed -p=3000",
+    "cy:ci": "cypress run -p=3000 --record --key=$CYPRESS_KEY",
     "cy:open": "cypress open"
   },
   "eslintConfig": {
