@@ -18,11 +18,11 @@
     "theme-ui": "^0.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start PORT=3000",
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-    "cy:run": "cypress run --headed",
+    "cy:run": "cypress run --headed -p=3000,
     "cy:open": "cypress open"
   },
   "eslintConfig": {
