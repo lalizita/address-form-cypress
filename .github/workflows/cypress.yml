@@ -1,16 +1,15 @@
 name: After server responds
-on: [push]
+on: [push, pull_request, pull_request_review]
 jobs:
   cypress-run:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v1
-      - name: GitHub Action for Yarn + Cypress
-        uses: KingScooty/actions-yarn-cy@1.0.0
         with:
-          start: yarn start
           # quote the url to be safe against YML parsing surprises
+          start: yarn start
           wait-on: 'http://localhost:3000'
+          wait-on-timeout: 120
