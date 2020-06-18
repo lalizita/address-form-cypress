@@ -11,6 +11,7 @@ import {
 import { Button } from 'rebass'
 import axios from 'axios'
 import { useFormik, FormikProvider, useField } from 'formik'
+import * as Yup from 'yup'
 
 const TextFieldFormik = (props) => {
   const [field, meta] = useField(props.name);
@@ -63,8 +64,14 @@ const FormCep = () => {
       bairro: '',
       logradouro: '',
     },
+    validationSchema:Yup.object().shape({
+      cep: Yup.string().required('campo de cep obrigatório'),
+      bairro: Yup.string().required('campo bairro obrigatório'),
+      logradouro: Yup.string().required('campo logradouro obrigatório'),
+    }),
     onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
+      localStorage.setItem('address', JSON.stringify(values))
     },
   });
 
@@ -75,6 +82,7 @@ const FormCep = () => {
           <Box width={1 / 2} px={2}>
             <Label htmlFor='cep'>Cep</Label>
             <CepField data-testid="cep" setFieldValue={formik.setFieldValue}/>
+            <p>{formik.errors.cep}</p>
           </Box>
           <Box width={1 / 2} px={2}>
             <Label htmlFor='bairro'>Bairro</Label>
@@ -84,6 +92,7 @@ const FormCep = () => {
               placeholder="bairro"
               data-testid="bairro"
             />
+            <p data-testid="error-bairro">{formik.errors.bairro}</p>
           </Box>
           <Box width={1 / 2} px={2}>
             <Label htmlFor='logradouro'>Logradouro</Label>
@@ -93,10 +102,11 @@ const FormCep = () => {
               placeholder="logradouro"
               data-testid="logradouro"
             />
+            <p>{formik.errors.logradouro}</p>
           </Box>
         </Flex>
         <Flex>
-          <Button type="submit">
+          <Button type="submit" data-testid="submit-address">
             Enviar
           </Button>
         </Flex>
