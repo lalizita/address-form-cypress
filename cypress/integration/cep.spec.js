@@ -16,6 +16,6 @@ const addressRequest = () => {
   cy.route({
     method: 'GET',
     url: `https://viacep.com.br/ws/01508010/json`,
-    response: 'fixture:address.json'
+    // response: 'fixture:address.json'
   }).as('resAddress')
 }

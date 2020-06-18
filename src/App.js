@@ -21,16 +21,16 @@ function App(props) {
             </Text>
             <Box mx='auto' />
             <Link to="/render-test">
-              Render
+              <Text ml="10px" data-testid="render-link">Render</Text>
             </Link>
             <Link to="/toggle">
-              Toogle
+              <Text ml="10px" data-testid="toggle-link">Toogle</Text>
             </Link>
             <Link to="customer-form">
-              Customer Form
+              <Text ml="10px" data-testid="customer-link">Customer Form</Text>
             </Link>
             <Link to="/form-cep">
-              Address Form
+              <Text ml="10px" data-testid="address-link">Address Form</Text>
             </Link>
           </Flex>
           <Switch>

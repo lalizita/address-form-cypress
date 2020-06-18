@@ -33,6 +33,7 @@ const CustomerForm = props => {
   onSubmit={e => e.preventDefault()}
   py={3}
   width="500px"
+  data-testid="form"
   >
   <Flex mx={-2} mb={3} >
     <Box width={1/2} px={2}>
